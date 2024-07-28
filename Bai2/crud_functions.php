@@ -42,7 +42,9 @@ function readItems($page_number, $page_size) {
 function readItems($page_number,$page_size){
     global $pdo;
     $sql='SELECT * FROM tbtItem LIMIT'.$page_size."OFFSET".$page_number*$page_size;
-    $stsm=$pdo->query($sql);
+    $stsm=$pdo->query($sql); 
+
+    
     return $stsm->fetchAll(PDO::FETCH_ASSOC);
 }
 /*function updateItem($id, $newName) {
